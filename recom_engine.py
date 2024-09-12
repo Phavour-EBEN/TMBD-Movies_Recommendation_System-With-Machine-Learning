@@ -140,13 +140,18 @@ new_dataset[new_dataset['title'] == 'John Carter' ].index[0]
 def recommendation(movie):
     index = new_dataset[new_dataset['title'] == movie ].index[0]
     distances = sorted(list(enumerate(cosine[index])),reverse=True, key=lambda x: x[1])
-    for i in distances[1:6]:
-        print(new_dataset.iloc[i[0]]['title'])
+    recommended_movies = []
+    for i in distances[1:6]:  # Start from 1 to exclude the movie itself
+        recommended_movies.append(new_dataset.iloc[i[0]]['title'])
+        return recommended_movies
+    # for i in distances[1:6]:
+    #     print(new_dataset.iloc[i[0]]['title'])
+    #     return new_dataset.iloc[i[0]]['title']
 
 
 
 # %%
-# recommendation('Batman')
+# recommendation(movie)
 
 # %%
 # import joblib
