@@ -143,7 +143,8 @@ def recommendation(movie):
     recommended_movies = []
     for i in distances[1:6]:  # Start from 1 to exclude the movie itself
         recommended_movies.append(new_dataset.iloc[i[0]]['title'])
-        return recommended_movies
+        print(recommended_movies)
+    return recommended_movies
     # for i in distances[1:6]:
     #     print(new_dataset.iloc[i[0]]['title'])
     #     return new_dataset.iloc[i[0]]['title']
